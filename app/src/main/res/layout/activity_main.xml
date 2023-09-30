@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+  <!--  <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FBFFD2"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">-->
+
+    <SearchView
+        android:id="@+id/edtSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:circularflow_defaultRadius="25dp"
+        android:clickable="true"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--</androidx.cardview.widget.CardView>-->
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardView"
+      android:layout_width="300dp"
+      android:layout_height="160sp"
+      android:layout_marginTop="8dp"
+      app:cardCornerRadius="35dp"
+      app:cardElevation="35dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/edtSearchBar">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/shoes" />
+
+  </androidx.cardview.widget.CardView>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recViewHorizantal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:orientation="horizontal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+  <TextView
+      android:id="@+id/SpecialForYou"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:text="Special For You"
+      android:textColor="@color/black"
+      android:textSize="22sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/recViewHorizantal" />
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recViewVertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/SpecialForYou" />
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottomNavigation"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      app:menu="@menu/bottom_nav_menu"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/recViewVertical" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
